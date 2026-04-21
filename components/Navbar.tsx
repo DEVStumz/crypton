@@ -89,7 +89,7 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden bg-[#12121e] border-b border-white/10 px-4 py-6 flex flex-col gap-4" style={{alignItems: 'center'}}>
           {links.map(l => (
-            <button key={l.label} onClick={() => handleClick(l.href)} className="text-left text-sm text-white/70 hover:text-[#e85   41e]">
+            <button key={l.label} onClick={() => handleClick(l.href)} className="text-left text-sm text-white/70 hover:text-[#e8541e]">
               {l.label}
             </button>
           ))}

@@ -41,6 +41,7 @@ function MemberCard({ m }: { m: typeof members[0] }) {
             src={m.image}
             alt={m.name}
             fill
+            sizes="(max-width: 768px) 100vw, 300px"
             style={{ objectFit: 'cover' }}
           />
         ) : (

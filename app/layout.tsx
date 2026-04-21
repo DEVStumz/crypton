@@ -6,10 +6,8 @@ import SplashScreen from '@/components/SplashScreen'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  icons: {
-    icon: '/icon.svg',
-  },
-
+   metadataBase: new URL("https://yourcryptondomain.com"),
+  icons: { icon: '/icon.svg',},
   title: 'Crypton  Collective Intelligence OS',
   description: 'An operating system for collective intelligence',
 
