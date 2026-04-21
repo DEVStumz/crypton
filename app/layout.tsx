@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: 'Crypton',
     images: [
       {
-        url: '/images/og-image.png', // ✅ metadataBase makes this absolute automatically
+        url: '/images/og-image1.png', // ✅ metadataBase makes this absolute automatically
         width: 1200,
         height: 630,
         alt: 'Crypton - Collective Intelligence OS',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Crypton',
     description: 'The decentralized ecosystem for the next generation of financial intelligence. Explore the core of Web3 with high-performance tools and institutional-grade security.',
-    images: ['/images/og-image.png'], // ✅ same image, metadataBase handles it
+    images: ['/images/og-image1.png'], // ✅ same image, metadataBase handles it
   },
 }
 
