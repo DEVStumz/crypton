@@ -32,9 +32,9 @@ function MemberCard({ m }: { m: typeof members[0] }) {
         margin: '0 auto 10px', overflow: 'hidden',
         border: '1px solid var(--border)',
         position: 'relative',
-        transition: 'filter 0.3s ease',
+        transition: 'filter 0.3s ease, transform 0.9s ease', // Added transform transition
         filter: hovered ? 'brightness(1) grayscale(0%)' : 'brightness(0.5) grayscale(40%)',
-        
+        transform: hovered ? 'translateY(-10px)' : 'translateY(0)', // Added Y translation
       }}>
         {m.image ? (
           <Image
@@ -59,7 +59,7 @@ function MemberCard({ m }: { m: typeof members[0] }) {
 
       <div style={{
         fontSize: 13, fontWeight: 500,
-        transition: 'color 0.3s ease',
+        transition: 'color 0.9s ease',
         color: hovered ? 'var(--orange)' : '#fff',
       }}>
         {m.name}
@@ -74,7 +74,13 @@ function MemberCard({ m }: { m: typeof members[0] }) {
 
 export default function Team() {
   return (
-    <section style={{ borderTop: '1px solid var(--border)', background: '#12121e', paddingTop: 50, paddingBottom: 50 }}>
+    <section className='relative' style={{ background: '#12121e', paddingTop: 50, paddingBottom: 50 }}>
+
+      {/* Faded gradient background */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: 'radial-gradient(ellipse at 20% 50%, rgba(232, 84, 30, 0.08) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(232, 84, 30, 0.05) 0%, transparent 50%)',
+      }} />
+
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-2xl font-bold text-white text-center uppercase" style={{ paddingBottom: 20 }}>
           Our Team

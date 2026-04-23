@@ -1,12 +1,22 @@
 "use client";
 
-import { style } from "framer-motion/client";
+import { useState } from "react";
 
 export default function Footer() {
+  const [email, setEmail] = useState('')
+  const [subscribed, setSubscribed] = useState(false)
+
+  const handleSubscribe = () => {
+    if (email.trim()) {
+      setSubscribed(true)
+      setEmail('')
+    }
+  }
+
   const cols = [
     { title: 'INFOMATION', links: ['Terms of service', 'About', 'Blog', 'Privacy Policy'] },
     { title: 'SUPPORT', links: ['FAQ', 'Contact', 'Community'] },
-    { title: 'SUBSCRIBE', links: [] }, // Keep this capitalized
+    { title: 'SUBSCRIBE', links: [] },
   ]
 
   const socials = [
@@ -19,8 +29,7 @@ export default function Footer() {
 
   return (
     <footer style={{ background: '#0a0a0f', borderTop: '1px solid var(--border)', paddingTop: '3%' }} className="py-16">
-      {/* Removed manual marginLeft: 5% to fix sagged space */}
-      <div className="max-w-6xl mx-auto px-6" style={{padding: 20,}}>
+      <div className="max-w-6xl mx-auto px-6" style={{ padding: 20 }}>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mb-10">
 
           {/* Brand column */}
@@ -82,34 +91,58 @@ export default function Footer() {
                   {l}
                 </div>
               ))}
-              
-              {/* FIXED: Check for 'SUBSCRIBE' instead of 'Subscribe' */}
+
               {c.title === 'SUBSCRIBE' && (
                 <div style={{ marginTop: 10 }}>
                   <p style={{ color: 'var(--text-muted)', fontSize: 12, marginBottom: 10, lineHeight: 1.6 }}>
                     Get the latest news and updates.
                   </p>
-                  <div style={{ display: 'flex', gap: 6 }}>
-                    <input
-                      type="email"
-                      placeholder="Email address"
-                      style={{
-                        background: '#1a1a26', // Darker, cleaner background
-                        border: '1px solid var(--border)',
-                        borderRadius: 8, padding: '8px 12px', fontSize: 12,
-                        color: '#fff', flex: 1, outline: 'none', width: 'auto',
-                      }}
-                    />
-                    <button style={{
-                      background: 'var(--orange)', border: 'none',
-                      borderRadius: 8, padding: '8px 14px', cursor: 'pointer',
+
+                  {subscribed ? (
+                    // ✅ Success message
+                    <div style={{
+                      display: 'flex', alignItems: 'center', gap: 8,
+                      background: 'rgba(232, 84, 30, 0.1)',
+                      border: '1px solid rgba(232, 84, 30, 0.3)',
+                      borderRadius: 8, padding: '10px 12px',
                     }}>
-                      <svg width="14" height="14" fill="none" stroke="#fff" strokeWidth="2">
-                        <line x1="2" y1="7" x2="12" y2="7"/>
-                        <polyline points="8,3 12,7 8,11"/>
+                      <svg width="16" height="16" fill="none" stroke="#e8541e" strokeWidth="2.5">
+                        <polyline points="3,8 7,12 13,5"/>
                       </svg>
-                    </button>
-                  </div>
+                      <span style={{ color: '#e8541e', fontSize: 12, fontWeight: 500 }}>
+                        You're subscribed!
+                      </span>
+                    </div>
+                  ) : (
+                    // Input + button
+                    <div style={{ display: 'flex', gap: 6, maxWidth: 220 }}>
+                      <input
+                        type="email"
+                        placeholder="Email address"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
+                        style={{
+                          background: '#1a1a26',
+                          border: '1px solid var(--border)',
+                          borderRadius: 8, padding: '8px 10px', fontSize: 11,
+                          color: '#fff', flex: 1, outline: 'none', minWidth: 0,
+                        }}
+                      />
+                      <button
+                        onClick={handleSubscribe}
+                        style={{
+                          background: 'var(--orange)', border: 'none',
+                          borderRadius: 8, padding: '8px 12px', cursor: 'pointer',
+                          flexShrink: 0,
+                        }}>
+                        <svg width="14" height="14" fill="none" stroke="#fff" strokeWidth="2">
+                          <line x1="2" y1="7" x2="12" y2="7"/>
+                          <polyline points="8,3 12,7 8,11"/>
+                        </svg>
+                      </button>
+                    </div>
+                  )}
                 </div>
               )}
             </div>

@@ -28,7 +28,13 @@ export default function BlogSection() {
   ];
 
   return (
-    <section id="blog" className="w-full px-6 py-24 bg-[#12121e]">
+    <section id="blog" className="relative w-full px-6 py-24 bg-[#12121e]">
+
+      {/* Faded gradient background */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: 'radial-gradient(ellipse at 50% 20%, rgba(232, 84, 30, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 20% 80%, rgba(232, 84, 30, 0.05) 0%, transparent 60%)',
+      }} />
+
       <div className="max-w-6xl mx-auto px-6 mt-4" style={{ paddingTop: 40, paddingBottom: 50}}>
         <div style={{ textAlign: 'center', paddingBottom: 30}} >
           <h3 className="text-3xl md:text-4xl font-bold text-white uppercase" style={{fontSize: '1.2rem'}}>what media says</h3>

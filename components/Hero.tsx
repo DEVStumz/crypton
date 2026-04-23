@@ -135,7 +135,7 @@ export default function Hero() {
           display: flex;
           align-items: center;
           padding-top: 80px;
-          padding-bottom: 60px;
+          padding-bottom: 40px;
         }
 
         .hero-grid {
