@@ -5,6 +5,7 @@ import SplashScreen from '@/components/SplashScreen'
 
 const inter = Inter({ subsets: ['latin'] })
 
+
 const BASE_URL = "https://crypton-coral.vercel.app/" // 👈 update after deploying
 
 export const metadata: Metadata = {
@@ -37,10 +38,12 @@ export const metadata: Metadata = {
   },
 }
 
+
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} overflow-x-hidden`}>
         <SplashScreen />
         {children}
       </body>

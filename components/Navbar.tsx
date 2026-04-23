@@ -52,16 +52,16 @@ export default function Navbar() {
       }} 
       className="fixed top-0 left-0 right-0 z-50 w-full"
     >
-      <div className="max-w-6xl mx-auto px-6 h-full flex items-center justify-between">
-        <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleClick('#home')} style={{ marginLeft: 40}}>
+      <div className="max-w-6xl mx-auto px-6 h-full flex items-center justify-between" style={{padding: 30}}>
+        <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleClick('#home')}>
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
             <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" stroke="#e8541e" strokeWidth="2" fill="none"/>
             <polygon points="14,8 20,11 20,17 14,20 8,17 8,11" fill="#e8541e"/>
           </svg>
-          <span className="text-white font-semibold text-lg">Crypton</span>
+          <span className="text-white font-semibold text-lg" style={{fontSize: '1.9rem'}}>Crypton</span>
         </div>
 
-        <ul className="hidden md:flex gap-8 items-center">
+        <ul className="hidden md:flex gap-6 items-center">
           {links.map(l => {
             const isActive = active === l.href.replace('#', '')
             return (

@@ -1,5 +1,7 @@
 "use client";
 
+import { style } from "framer-motion/client";
+
 export default function Footer() {
   const cols = [
     { title: 'INFOMATION', links: ['Terms of service', 'About', 'Blog', 'Privacy Policy'] },
@@ -18,7 +20,7 @@ export default function Footer() {
   return (
     <footer style={{ background: '#0a0a0f', borderTop: '1px solid var(--border)', paddingTop: '3%' }} className="py-16">
       {/* Removed manual marginLeft: 5% to fix sagged space */}
-      <div className="max-w-6xl mx-auto px-6" style={{paddingLeft: 30, paddingTop: 20, paddingBottom: 20}}>
+      <div className="max-w-6xl mx-auto px-6" style={{padding: 20,}}>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mb-10">
 
           {/* Brand column */}
@@ -95,7 +97,7 @@ export default function Footer() {
                         background: '#1a1a26', // Darker, cleaner background
                         border: '1px solid var(--border)',
                         borderRadius: 8, padding: '8px 12px', fontSize: 12,
-                        color: '#fff', flex: 1, outline: 'none', width: '50%',
+                        color: '#fff', flex: 1, outline: 'none', width: 'auto',
                       }}
                     />
                     <button style={{

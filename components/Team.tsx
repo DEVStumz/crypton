@@ -76,10 +76,10 @@ export default function Team() {
   return (
     <section style={{ borderTop: '1px solid var(--border)', background: '#12121e', paddingTop: 50, paddingBottom: 50 }}>
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-2xl font-bold text-white text-center uppercase" style={{ marginBottom: '3%' }}>
+        <h2 className="text-2xl font-bold text-white text-center uppercase" style={{ paddingBottom: 20 }}>
           Our Team
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-2 justify-center" style={{ marginLeft: '5%'}}>
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-2 justify-center" style={{ paddingLeft:  10}}>
           {members.map(m => (
             <MemberCard key={m.name} m={m} />
           ))}

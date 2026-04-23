@@ -1,6 +1,5 @@
 'use client'
-import { motion } from 'framer-motion'
-import { useFadeIn } from '@/hooks/useFadeIn'
+import { motion, Variants } from 'framer-motion'
 
 const cards = [
   {
@@ -36,29 +35,50 @@ const cards = [
   },
 ]
 
+
+const containerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.2 },
+  },
+}
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+}
+
 export default function FeatureCards() {
-  const { ref, visible } = useFadeIn()
   return (
-    <section style={{ paddingBottom: '40px', paddingTop: '10px' }} className="bg-[#12121e] py-16">
-      <div ref={ref} className="bg-[#12121e] max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8" style={{ marginLeft: '4%', paddingTop: '3%', paddingBottom:'3%' }}>
-        {cards.map((c, i) => (
+    <section className="bg-[#12121e] w-full overflow-hidden py-12 px-6 justify-center" style={{ paddingTop: 50, paddingBottom: 50}}>
+      <motion.div
+        className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        style={{paddingLeft: 20}}
+      >
+        {cards.map((c) => (
           <motion.div
             key={c.title}
-            initial={{ opacity: 0, y: 50 }}
-            animate={visible ? { opacity: 5, y: 10 } : {}}
-            transition={{ duration: 0.5, delay: i * 0.15, ease: 'easeOut' }}
-            style={{ background: '#4848546d', boxShadow: 'rgba(233, 210, 210, 0.7)', border: '1px solid grey', borderRadius: 8, height: '40vh', padding: '30px' }}
-            className="p-8 text-center hover:border-orange-500 transition-colors"
-            whileHover={{ y: -15, transition: { duration: 0.4 } }}
+            variants={cardVariants}
+            whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            className="flex flex-col items-center text-center p-8 rounded-xl border border-gray-700 hover:border-orange-500 transition-colors"
+            style={{ background: '#4848546d', height: '200px', width: '350px', padding: '10px, 26px', }}
           >
-            <div className="flex justify-center mb-5">{c.icon}</div>
-            <h3 className="text-white font-semibold mb-3" style={{ marginTop: 15}}>{c.title}</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: 13, lineHeight: 1.7, marginTop: 15 }}>
+            <div className="mb-5" style={{paddingTop: 30}}>{c.icon}</div>
+            <h3 className="text-white font-semibold text-lg mb-3">{c.title}</h3>
+            <p className="text-gray-400 text-sm leading-relaxed text-center" style={{padding: 10}}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
             </p>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }

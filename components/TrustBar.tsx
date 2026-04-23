@@ -5,7 +5,7 @@ const logos = ['CNBC', 'coindesk', 'Coinspeaker', 'BLOCKONOMІ', 'CoinTelegraph'
 
 export default function TrustBar() {
   return (
-    <section style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)',
+    <section className='w-full' style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)',
       overflow: 'hidden', padding: '20px 0' }}>
       <motion.div
         style={{ display: 'flex', gap: 80, whiteSpace: 'nowrap' }}

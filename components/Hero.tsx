@@ -212,9 +212,9 @@ export default function Hero() {
         /* ── Mobile ── */
         @media (max-width: 768px) {
           .hero-section {
-            padding-top: 120px;
-            padding-bottom: 60px;
-            min-height: 100vh;
+            padding-top: 80px;
+            padding-bottom: 20px;
+            min-height: 90vh;
             align-items: flex-start;
           }
 
@@ -226,8 +226,10 @@ export default function Hero() {
           }
 
           .hero-text {
-            padding-top: 35px;
+            padding-top: 90px;
+            text-align: center;
           }
+          
 
           .hero-line1,
           .hero-line2 {
@@ -242,7 +244,7 @@ export default function Hero() {
 
           .hero-graphic {
             position: absolute;
-            top: 30;
+            top: 10;
             right: -20px;
             opacity: 0.15;
             z-index: 1;
@@ -250,12 +252,12 @@ export default function Hero() {
           }
 
           .hero-graphic svg {
-            width: 480px;
+            width: 580px;
           }
         }
       `}</style>
 
-      <section className="hero-section">
+      <section className="hero-section relative w-full overflow-hidden">
         <Particles />
         <motion.div style={{ y, opacity, width: '100%' }}>
           <div className="hero-grid">

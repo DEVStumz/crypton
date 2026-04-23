@@ -9,21 +9,21 @@ export default function BlogSection() {
       title: "The Future of Decentralized Finance",
       text: "We accept access as a startup to venture capital is hard it tales and cost money that a startup",
       category: "CRYPTO",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800",
+      image: "https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/67a1bc64704782001d711270.jpg",
     },
     {
       date: "APR 08, 2026",
       title: "Understanding Smart Contract Security",
       text: "We accept access as a startup to venture capital is hard it tales and cost money that a startup",
       category: "SECURITY",
-      image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800",
+      image: "https://www.antiersolutions.com/blogs/wp-content/uploads/2025/11/Top-10-Largest-Blockchain-Development-Companies-in-2026.jpg",
     },
     {
       date: "MAR 28, 2026",
       title: "Top 5 Blockchain Trends for 2026",
       text: "We accept access as a startup to venture capital is hard it tales and cost money that a startup",
       category: "TRENDS",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&q=80&w=800",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPO8N3Z9qEufY5dVaZE6InCAUwWC2_7Y39pA&s",
     },
   ];
 
@@ -38,7 +38,7 @@ export default function BlogSection() {
         {/* MOBILE: Horizontal Scroll (flex-nowrap + overflow-x-auto)
           DESKTOP: 3-Column Grid (md:grid-cols-3)
         */}
-        <div className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto pb-8 md:pb-0 no-scrollbar snap-x snap-mandatory" style={{marginLeft: '7%', paddingTop: 20}}>
+        <div className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto pb-8 md:pb-0 no-scrollbar snap-x snap-mandatory" style={{ padding: 20,}}>
           {posts.map((post, idx) => (
             <div 
               key={idx}

@@ -117,7 +117,7 @@ export default function TokenSale() {
         <div
           ref={ref}
           className="w-full max-w-4xl bg-[#2a2a34]/60 border border-white/10 rounded-xl ts-card"
-          style={{ marginTop: 30}}
+          style={{ marginTop: 30, marginRight: 30}}
         >
           {/* Timer + Progress */}
           <div className="w-full">

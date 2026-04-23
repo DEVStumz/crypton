@@ -4,7 +4,7 @@ export default function Features() {
   return (
     <>
       
-      <section className="bg-[#12121e] max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-4" style={{ paddingTop: 10}}>
+      <section className="bg-[#12121e] max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-4 w-full overflow-x-hidden" style={{ paddingTop: 10}}>
         <div className="flex-1 flex justify-center">
           <svg width="480" height="380" viewBox="0 0 280 260" fill="none">
             <rect x="80" y="80" width="80" height="80" rx="4"
